@@ -28,11 +28,7 @@ handle() {
 
             # VVV Compressed into one call VVV
             
-            hyprctl --batch "dispatch setfloating $address ; dispatch resizewindowpixel exact 200 200, $address ; dispatch movewindowpixel 0 -150, $address ; dispatch focuswindow $address"
-
-            sleep 0.6 # wait for animation to finish
-            
-            hyprctl dispatch movecursortocorner 3 # Top left corner
+            hyprctl --batch "dispatch setfloating $address ; dispatch resizewindowpixel exact 400 700, $address ; dispatch focuswindow $address"
         fi;
       fi;;
 
@@ -53,7 +49,7 @@ handle() {
     #     hyprctl --batch "dispatch togglefloating address:0x$window_id ; dispatch resizewindowpixel exact 20% 40%,address:0x$window_id ; dispatch movewindowpixel exact 40% 30%,address:0x$window_id"        
     #   fi
     #   ;;
-  esacl
+  esac
 }
 
 # Listen to the Hyprland socket for events and process each line with the handle function
