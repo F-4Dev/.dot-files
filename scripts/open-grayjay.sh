@@ -4,7 +4,7 @@ start_grayjay() {
     pkill Grayjay
 
     # Navigate to the Grayjay directory
-    cd ~/custom-installations/Grayjay.Desktop-linux-x64/Grayjay.Desktop-linux-x64-v2/ || { echo "Failed to change directory"; return 1; }
+    cd ~/custom-installations/Grayjay.Desktop-linux-x64/Grayjay.Desktop-linux-x64-v5 || { echo "Failed to change directory"; return 1; }
 
     # Start Grayjay in the background
     ./Grayjay -h > /dev/null 2>&1 &
@@ -16,7 +16,7 @@ start_grayjay() {
 
     while [ $attempt -lt $max_attempts ]; do
         # Retrieve the port number used by Grayjay
-        port=$(ss -tulpn | grep Grayjay | grep 127.0.0.1 | awk '{print $5}' | awk -F: '{print $2}')
+        port=$(ss -tulpn | grep Grayjay | grep 512 | awk '{print $5}' | awk -F: '{print $2}')
 
         if [ -n "$port" ]; then
             echo "Grayjay started on port $port."
