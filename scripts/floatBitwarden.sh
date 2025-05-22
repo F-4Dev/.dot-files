@@ -28,7 +28,7 @@ handle() {
 
             # VVV Compressed into one call VVV
             
-            hyprctl --batch "dispatch setfloating $address ; dispatch resizewindowpixel exact 400 700, $address ; dispatch focuswindow $address"
+            hyprctl --batch "dispatch setfloating $address ; dispatch resizewindowpixel exact 400 700, $address ; dispatch centerwindow $address"
         fi;
       fi;;
 

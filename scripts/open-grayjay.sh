@@ -1,13 +1,15 @@
 #!/bin/bash
 start_grayjay() {
     # Kill any running instances of Grayjay
-    pkill Grayjay
+    pkill -f Grayjay
 
     # Navigate to the Grayjay directory
-    cd ~/custom-installations/Grayjay.Desktop-linux-x64/Grayjay.Desktop-linux-x64-v5 || { echo "Failed to change directory"; return 1; }
+    cd ~/custom-installations/Grayjay.Desktop-linux-x64/Grayjay.Desktop-linux-x64-v2 || { echo "Failed to change directory"; return 1; }
 
     # Start Grayjay in the background
-    ./Grayjay -h > /dev/null 2>&1 &
+    ./Grayjay
+
+    sleep 2
 
     # Wait for Grayjay to start and listen on a port
     local max_attempts=10
